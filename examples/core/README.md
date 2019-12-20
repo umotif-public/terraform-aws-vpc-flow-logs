@@ -1,40 +1,11 @@
-# terraform-aws-vpc-flow-logs
+## Example deployment flow
 
-Terraform module for enabling AWS VPC flow logs with CloudWatch sink.
-
-## Terraform versions
-
-Terraform 0.12. Pin module version to `~> v1.0`. Submit pull-requests to `master` branch.
-
-## Usage
-
-```hcl
-module "vpc-flow-logs" {
-  source = "umotif-public/"
-  version = "~> 1.0"
-
-  name_prefix = "test-example"
-  vpc_id      = "vpc-1sadasdasd123"
-
-  traffic_type = "ALL"
-
-  tags = {
-    Project = "Test"
-  }
-}
+```bash
+terraform init
+terraform validate
+terraform plan
+terraform apply --auto-approve
 ```
-
-## Assumptions
-
-Module is to be used with Terraform > 0.12.
-
-## Examples
-
-* [VPC flow logs](https://github.com/umotif-public/terraform-aws-vpc-flow-logs/tree/master/examples/core)
-
-## Authors
-
-Module managed by [Marcin Cuber](https://github.com/marcincuber) [linkedin](https://www.linkedin.com/in/marcincuber/).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
@@ -58,7 +29,3 @@ Module managed by [Marcin Cuber](https://github.com/marcincuber) [linkedin](http
 | vpc\_flow\_logs\_role\_id | The ID specifying the role used by Flow Logs. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
-## License
-
-See LICENSE for full details.
