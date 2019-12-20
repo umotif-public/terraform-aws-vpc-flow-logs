@@ -10,7 +10,7 @@ Terraform 0.12. Pin module version to `~> v1.0`. Submit pull-requests to `master
 
 ```hcl
 module "vpc-flow-logs" {
-  source = "umotif-public/"
+  source = "umotif-public/vpc-flow-logs/aws"
   version = "~> 1.0"
 
   name_prefix = "test-example"
