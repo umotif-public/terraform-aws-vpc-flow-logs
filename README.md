@@ -41,12 +41,12 @@ Module managed by [Marcin Cuber](https://github.com/marcincuber) [linkedin](http
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| name\_prefix | A prefix used for naming resources. | string | n/a | yes |
-| vpc\_id | VPC ID where resources will be created and flow logs enabled. | string | n/a | yes |
 | kms\_key\_id | The ARN of the KMS Key to use when encrypting log data. Please note, after the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested. | string | `""` | no |
+| name\_prefix | A prefix used for naming resources. | string | n/a | yes |
 | retention\_in\_days | Specifies the number of days you want to retain log events in the specified log group. | string | `""` | no |
 | tags | Default tags attached to all resources. | map(string) | `{}` | no |
 | traffic\_type | The type of traffic to capture. Valid values: ACCEPT,REJECT, ALL. | string | `"ALL"` | no |
+| vpc\_id | VPC ID where resources will be created and flow logs enabled. | string | n/a | yes |
 
 ## Outputs
 
@@ -62,3 +62,17 @@ Module managed by [Marcin Cuber](https://github.com/marcincuber) [linkedin](http
 ## License
 
 See LICENSE for full details.
+
+## Pre-commit hooks
+
+### Install dependencies
+
+* [`pre-commit`](https://pre-commit.com/#install)
+* [`terraform-docs`](https://github.com/segmentio/terraform-docs) required for `terraform_docs` hooks.
+* [`TFLint`](https://github.com/terraform-linters/tflint) required for `terraform_tflint` hook.
+
+#### MacOS
+
+```bash
+brew install pre-commit terraform-docs tflint
+```
