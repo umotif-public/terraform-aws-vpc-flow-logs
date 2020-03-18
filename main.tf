@@ -30,11 +30,13 @@ EOF
 
 resource "aws_flow_log" "vpc_flow_logs" {
   log_destination_type = "cloud-watch-logs"
+  log_destination      = aws_cloudwatch_log_group.vpc_flow_logs.arn
 
-  log_destination = aws_cloudwatch_log_group.vpc_flow_logs.arn
-  iam_role_arn    = aws_iam_role.vpc_flow_logs.arn
-  vpc_id          = var.vpc_id
-  traffic_type    = var.traffic_type
+  iam_role_arn = aws_iam_role.vpc_flow_logs.arn
+  vpc_id       = var.vpc_id
+  traffic_type = var.traffic_type
+
+  tags = var.tags
 }
 
 resource "aws_iam_policy" "vpc_flow_logs" {

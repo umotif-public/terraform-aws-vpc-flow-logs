@@ -34,7 +34,7 @@ Module is to be used with Terraform > 0.12.
 
 ## Authors
 
-Module managed by [Marcin Cuber](https://github.com/marcincuber) [linkedin](https://www.linkedin.com/in/marcincuber/).
+Module managed by [Marcin Cuber](https://github.com/marcincuber) [LinkedIn](https://www.linkedin.com/in/marcincuber/).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
@@ -45,7 +45,7 @@ Module managed by [Marcin Cuber](https://github.com/marcincuber) [linkedin](http
 | name\_prefix | A prefix used for naming resources. | string | n/a | yes |
 | retention\_in\_days | Specifies the number of days you want to retain log events in the specified log group. | string | `""` | no |
 | tags | Default tags attached to all resources. | map(string) | `{}` | no |
-| traffic\_type | The type of traffic to capture. Valid values: ACCEPT,REJECT, ALL. | string | `"ALL"` | no |
+| traffic\_type | The type of traffic to capture. Valid values: ACCEPT, REJECT, ALL. | string | `"ALL"` | no |
 | vpc\_id | VPC ID where resources will be created and flow logs enabled. | string | n/a | yes |
 
 ## Outputs
