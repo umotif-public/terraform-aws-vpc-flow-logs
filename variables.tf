@@ -28,6 +28,6 @@ variable "kms_key_id" {
 
 variable "traffic_type" {
   type        = string
-  description = "The type of traffic to capture. Valid values: ACCEPT,REJECT, ALL."
+  description = "The type of traffic to capture. Valid values: ACCEPT, REJECT, ALL."
   default     = "ALL"
 }

@@ -21,6 +21,7 @@ module "vpc" {
 
   tags = {
     Environment = "test"
+    Project     = "sample"
   }
 }
 
@@ -37,6 +38,7 @@ module "flow-logs" {
   # retention_in_days = 30
 
   tags = {
-    Project = "Test"
+    Environment = "test"
+    Project     = "sample"
   }
 }
