@@ -36,6 +36,7 @@ module "flow-logs" {
 
   traffic_type = "ALL"
   # retention_in_days = 30
+  # max_aggregation_interval = 60
 
   tags = {
     Environment = "test"
