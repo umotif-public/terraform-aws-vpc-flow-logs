@@ -36,6 +36,8 @@ resource "aws_flow_log" "vpc_flow_logs" {
   vpc_id       = var.vpc_id
   traffic_type = var.traffic_type
 
+  max_aggregation_interval = var.max_aggregation_interval
+
   tags = var.tags
 }
 

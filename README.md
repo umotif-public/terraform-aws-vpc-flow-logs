@@ -4,14 +4,14 @@ Terraform module for enabling AWS VPC flow logs with CloudWatch sink.
 
 ## Terraform versions
 
-Terraform 0.12. Pin module version to `~> v1.0`. Submit pull-requests to `master` branch.
+Terraform 0.12. Pin module version to `~> v1.1.0`. Submit pull-requests to `master` branch.
 
 ## Usage
 
 ```hcl
 module "vpc-flow-logs" {
   source = "umotif-public/vpc-flow-logs/aws"
-  version = "~> 1.0"
+  version = "~> 1.1.0"
 
   name_prefix = "test-example"
   vpc_id      = "vpc-1sadasdasd123"
@@ -37,16 +37,23 @@ Module is to be used with Terraform > 0.12.
 Module managed by [Marcin Cuber](https://github.com/marcincuber) [LinkedIn](https://www.linkedin.com/in/marcincuber/).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | ~> 2.55 |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| kms\_key\_id | The ARN of the KMS Key to use when encrypting log data. Please note, after the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested. | string | `""` | no |
-| name\_prefix | A prefix used for naming resources. | string | n/a | yes |
-| retention\_in\_days | Specifies the number of days you want to retain log events in the specified log group. | string | `""` | no |
-| tags | Default tags attached to all resources. | map(string) | `{}` | no |
-| traffic\_type | The type of traffic to capture. Valid values: ACCEPT, REJECT, ALL. | string | `"ALL"` | no |
-| vpc\_id | VPC ID where resources will be created and flow logs enabled. | string | n/a | yes |
+|------|-------------|------|---------|:-----:|
+| kms\_key\_id | The ARN of the KMS Key to use when encrypting log data. Please note, after the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested. | `string` | `""` | no |
+| max\_aggregation\_interval | The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10 minutes) | `string` | `"600"` | no |
+| name\_prefix | A prefix used for naming resources. | `string` | n/a | yes |
+| retention\_in\_days | Specifies the number of days you want to retain log events in the specified log group. | `string` | `""` | no |
+| tags | Default tags attached to all resources. | `map(string)` | `{}` | no |
+| traffic\_type | The type of traffic to capture. Valid values: ACCEPT, REJECT, ALL. | `string` | `"ALL"` | no |
+| vpc\_id | VPC ID where resources will be created and flow logs enabled. | `string` | n/a | yes |
 
 ## Outputs
 

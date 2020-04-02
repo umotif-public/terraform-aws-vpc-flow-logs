@@ -31,3 +31,9 @@ variable "traffic_type" {
   description = "The type of traffic to capture. Valid values: ACCEPT, REJECT, ALL."
   default     = "ALL"
 }
+
+variable "max_aggregation_interval" {
+  type        = string
+  description = "The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. Valid Values: 60 seconds (1 minute) or 600 seconds (10 minutes)"
+  default     = "600"
+}
