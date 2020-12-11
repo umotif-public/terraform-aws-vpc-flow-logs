@@ -1,3 +1,5 @@
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/umotif-public/terraform-aws-vpc-flow-logs?style=social)
+
 # terraform-aws-vpc-flow-logs
 
 Terraform module for enabling AWS VPC flow logs with CloudWatch sink.
